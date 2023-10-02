@@ -1,6 +1,6 @@
 import React from "react";
 
-const HighlightText = ({ content = "test value", color }) => {
+const HighlightText = ({ content, color }) => {
   return <span className={`text-[${color}]`}>{content}</span>;
 };
 

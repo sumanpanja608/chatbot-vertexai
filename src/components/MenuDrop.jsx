@@ -5,14 +5,14 @@ import { IconButton } from "@chakra-ui/react";
 import { HiMenuAlt2 } from "react-icons/hi";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { IconContext } from "react-icons";
+import { Link } from "react-router-dom";
 
 const MenuDrop = () => {
-  const menuiconcolor = "#fafcfb";
   return (
     <Menu>
       {({ isOpen }) => (
         <>
-          <IconContext.Provider value={{ color: "#fafcfb" }}>
+          <IconContext.Provider value={{ color: "#080807" }}>
             <MenuButton
               as={IconButton}
               icon={
@@ -24,11 +24,21 @@ const MenuDrop = () => {
             />
           </IconContext.Provider>
           <MenuList variant="ghost" colorScheme="transparent">
-            <MenuItem>Download</MenuItem>
-            <MenuItem>Create a Copy</MenuItem>
-            <MenuItem>Mark as Draft</MenuItem>
-            <MenuItem>Delete</MenuItem>
-            <MenuItem>Attend a Workshop</MenuItem>
+            <Link to={"/"}>
+              <MenuItem>Home</MenuItem>
+            </Link>
+
+            <Link to={"/contact-us"}>
+              <MenuItem>Contact US</MenuItem>
+            </Link>
+
+            <Link to={"/signup"}>
+              <MenuItem>Login</MenuItem>
+            </Link>
+
+            <Link to={"/chat"}>
+              <MenuItem>Chat</MenuItem>
+            </Link>
           </MenuList>
         </>
       )}
